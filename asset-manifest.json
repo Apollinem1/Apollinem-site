@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Apollinem1/Apollinem-site.io.git/static/css/main.f0bfd650.css",
+    "main.js": "/Apollinem1/Apollinem-site.io.git/static/js/main.f9a82621.js",
+    "static/js/787.5d505ca4.chunk.js": "/Apollinem1/Apollinem-site.io.git/static/js/787.5d505ca4.chunk.js",
+    "static/media/GitHub.png": "/Apollinem1/Apollinem-site.io.git/static/media/GitHub.12c527d3a6a1ff918324.png",
+    "static/media/welcometusur.png": "/Apollinem1/Apollinem-site.io.git/static/media/welcometusur.f1154383e9f5047fc41e.png",
+    "static/media/Studyintomsk.png": "/Apollinem1/Apollinem-site.io.git/static/media/Studyintomsk.c1770576fb2cb08ee25b.png",
+    "static/media/Glitch.jpg": "/Apollinem1/Apollinem-site.io.git/static/media/Glitch.734327ea0eea23b9cd77.jpg",
+    "static/media/circular-std-4.ttf": "/Apollinem1/Apollinem-site.io.git/static/media/circular-std-4.ce7af6ddb66d75a4a2bc.ttf",
+    "static/media/superline.ttf": "/Apollinem1/Apollinem-site.io.git/static/media/superline.891fb4b07b8fc3a3acd6.ttf",
+    "index.html": "/Apollinem1/Apollinem-site.io.git/index.html",
+    "main.f0bfd650.css.map": "/Apollinem1/Apollinem-site.io.git/static/css/main.f0bfd650.css.map",
+    "main.f9a82621.js.map": "/Apollinem1/Apollinem-site.io.git/static/js/main.f9a82621.js.map",
+    "787.5d505ca4.chunk.js.map": "/Apollinem1/Apollinem-site.io.git/static/js/787.5d505ca4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0bfd650.css",
+    "static/js/main.f9a82621.js"
+  ]
+}

@@ -1,0 +1,51 @@
+.portfolio {
+    max-width: 1440px;
+    margin: 32px auto 0;
+   animation: fade 2s;
+   display: flex;
+   flex-direction: row;
+}
+.portfolio p {
+    font-size: 2.5em;
+    font-family: "Circular";
+    color: #551a8b;
+    /* letter-spacing: 0.1em; */
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.portfolio img {
+    width: 100%;
+    margin: 1em auto;
+}
+.portfolio > div {
+    max-width: 50%;
+    width: 100%;
+    margin-right: 1%;
+
+}
+
+.portfolio p a {
+    text-decoration: none;
+}
+.portfolio p a {
+    text-decoration: none;
+    
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all .5s;
+}
+
+.portfolio p a:hover, .portfolio p a:focus {
+    background-size: 100% 4px;
+    color: white;
+
+}

@@ -1,0 +1,19 @@
+.skill {
+    max-width: 1440px;
+    margin: 32px auto;
+   animation: fade 2s;
+}
+.skill p {
+    font-size: 2.5em;
+    font-family: "Circular";
+    color: #551a8b;
+    /* letter-spacing: 0.1em; */
+}
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

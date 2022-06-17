@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Apollinem-site/static/css/main.7882e337.css",
-    "main.js": "/Apollinem-site/static/js/main.05c2cff0.js",
+    "main.css": "/Apollinem-site/static/css/main.9309fe1b.css",
+    "main.js": "/Apollinem-site/static/js/main.64093166.js",
     "static/js/787.5d505ca4.chunk.js": "/Apollinem-site/static/js/787.5d505ca4.chunk.js",
     "static/media/GitHub.png": "/Apollinem-site/static/media/GitHub.12c527d3a6a1ff918324.png",
     "static/media/welcometusur.png": "/Apollinem-site/static/media/welcometusur.f1154383e9f5047fc41e.png",
@@ -10,12 +10,12 @@
     "static/media/circular-std-4.ttf": "/Apollinem-site/static/media/circular-std-4.ce7af6ddb66d75a4a2bc.ttf",
     "static/media/superline.ttf": "/Apollinem-site/static/media/superline.891fb4b07b8fc3a3acd6.ttf",
     "index.html": "/Apollinem-site/index.html",
-    "main.7882e337.css.map": "/Apollinem-site/static/css/main.7882e337.css.map",
-    "main.05c2cff0.js.map": "/Apollinem-site/static/js/main.05c2cff0.js.map",
+    "main.9309fe1b.css.map": "/Apollinem-site/static/css/main.9309fe1b.css.map",
+    "main.64093166.js.map": "/Apollinem-site/static/js/main.64093166.js.map",
     "787.5d505ca4.chunk.js.map": "/Apollinem-site/static/js/787.5d505ca4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7882e337.css",
-    "static/js/main.05c2cff0.js"
+    "static/css/main.9309fe1b.css",
+    "static/js/main.64093166.js"
   ]
 }

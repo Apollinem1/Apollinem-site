@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Apollinem-site/static/css/main.05a27e4a.css",
-    "main.js": "/Apollinem-site/static/js/main.83670f47.js",
+    "main.css": "/Apollinem-site/static/css/main.f805e684.css",
+    "main.js": "/Apollinem-site/static/js/main.1159c3d1.js",
     "static/js/787.5d505ca4.chunk.js": "/Apollinem-site/static/js/787.5d505ca4.chunk.js",
     "static/media/GitHub.png": "/Apollinem-site/static/media/GitHub.f00f2aab3c00f6c2e20c.png",
     "static/media/welcometusur.png": "/Apollinem-site/static/media/welcometusur.f1154383e9f5047fc41e.png",
     "static/media/Studyintomsk.png": "/Apollinem-site/static/media/Studyintomsk.c1770576fb2cb08ee25b.png",
     "static/media/Glitch.jpg": "/Apollinem-site/static/media/Glitch.734327ea0eea23b9cd77.jpg",
-    "static/media/DidactGothic-Regular.ttf": "/Apollinem-site/static/media/DidactGothic-Regular.37c8a8ed522192cd4de5.ttf",
-    "static/media/Prompt-Medium.ttf": "/Apollinem-site/static/media/Prompt-Medium.13aa547876aaa510c372.ttf",
-    "static/media/Exo-Black.ttf": "/Apollinem-site/static/media/Exo-Black.938f9ec106a6ae09f327.ttf",
+    "static/media/Martel-Regular.ttf": "/Apollinem-site/static/media/Martel-Regular.583920b99f611400f3b8.ttf",
+    "static/media/TenorSans-Regular.ttf": "/Apollinem-site/static/media/TenorSans-Regular.0d22289d38b3d37f95b6.ttf",
+    "static/media/SquadaOne-Regular.ttf": "/Apollinem-site/static/media/SquadaOne-Regular.104dc97f8204f39823c4.ttf",
     "index.html": "/Apollinem-site/index.html",
-    "main.05a27e4a.css.map": "/Apollinem-site/static/css/main.05a27e4a.css.map",
-    "main.83670f47.js.map": "/Apollinem-site/static/js/main.83670f47.js.map",
+    "main.f805e684.css.map": "/Apollinem-site/static/css/main.f805e684.css.map",
+    "main.1159c3d1.js.map": "/Apollinem-site/static/js/main.1159c3d1.js.map",
     "787.5d505ca4.chunk.js.map": "/Apollinem-site/static/js/787.5d505ca4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05a27e4a.css",
-    "static/js/main.83670f47.js"
+    "static/css/main.f805e684.css",
+    "static/js/main.1159c3d1.js"
   ]
 }

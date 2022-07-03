@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/Apollinem1/Apollinem-site.io.git/static/css/main.f0bfd650.css",
-    "main.js": "/Apollinem1/Apollinem-site.io.git/static/js/main.f9a82621.js",
-    "static/js/787.5d505ca4.chunk.js": "/Apollinem1/Apollinem-site.io.git/static/js/787.5d505ca4.chunk.js",
-    "static/media/GitHub.png": "/Apollinem1/Apollinem-site.io.git/static/media/GitHub.12c527d3a6a1ff918324.png",
-    "static/media/welcometusur.png": "/Apollinem1/Apollinem-site.io.git/static/media/welcometusur.f1154383e9f5047fc41e.png",
-    "static/media/Studyintomsk.png": "/Apollinem1/Apollinem-site.io.git/static/media/Studyintomsk.c1770576fb2cb08ee25b.png",
-    "static/media/Glitch.jpg": "/Apollinem1/Apollinem-site.io.git/static/media/Glitch.734327ea0eea23b9cd77.jpg",
-    "static/media/circular-std-4.ttf": "/Apollinem1/Apollinem-site.io.git/static/media/circular-std-4.ce7af6ddb66d75a4a2bc.ttf",
-    "static/media/superline.ttf": "/Apollinem1/Apollinem-site.io.git/static/media/superline.891fb4b07b8fc3a3acd6.ttf",
-    "index.html": "/Apollinem1/Apollinem-site.io.git/index.html",
-    "main.f0bfd650.css.map": "/Apollinem1/Apollinem-site.io.git/static/css/main.f0bfd650.css.map",
-    "main.f9a82621.js.map": "/Apollinem1/Apollinem-site.io.git/static/js/main.f9a82621.js.map",
-    "787.5d505ca4.chunk.js.map": "/Apollinem1/Apollinem-site.io.git/static/js/787.5d505ca4.chunk.js.map"
+    "main.css": "/Apollinem-site/static/css/main.c666f0e3.css",
+    "main.js": "/Apollinem-site/static/js/main.83670f47.js",
+    "static/js/787.5d505ca4.chunk.js": "/Apollinem-site/static/js/787.5d505ca4.chunk.js",
+    "static/media/GitHub.png": "/Apollinem-site/static/media/GitHub.f00f2aab3c00f6c2e20c.png",
+    "static/media/welcometusur.png": "/Apollinem-site/static/media/welcometusur.f1154383e9f5047fc41e.png",
+    "static/media/Studyintomsk.png": "/Apollinem-site/static/media/Studyintomsk.c1770576fb2cb08ee25b.png",
+    "static/media/Glitch.jpg": "/Apollinem-site/static/media/Glitch.734327ea0eea23b9cd77.jpg",
+    "static/media/DidactGothic-Regular.ttf": "/Apollinem-site/static/media/DidactGothic-Regular.37c8a8ed522192cd4de5.ttf",
+    "static/media/Prompt-Medium.ttf": "/Apollinem-site/static/media/Prompt-Medium.13aa547876aaa510c372.ttf",
+    "static/media/Exo-Black.ttf": "/Apollinem-site/static/media/Exo-Black.938f9ec106a6ae09f327.ttf",
+    "index.html": "/Apollinem-site/index.html",
+    "main.c666f0e3.css.map": "/Apollinem-site/static/css/main.c666f0e3.css.map",
+    "main.83670f47.js.map": "/Apollinem-site/static/js/main.83670f47.js.map",
+    "787.5d505ca4.chunk.js.map": "/Apollinem-site/static/js/787.5d505ca4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0bfd650.css",
-    "static/js/main.f9a82621.js"
+    "static/css/main.c666f0e3.css",
+    "static/js/main.83670f47.js"
   ]
 }

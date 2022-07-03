@@ -3,6 +3,27 @@ section {
   background-color: #000;
   min-height: 100vh;
 }
+@font-face {
+  font-family: Didact;
+  src: url(./Fonts/DidactGothic-Regular.ttf);
+}
+@font-face {
+  font-family: Prompt;
+  src: url(./Fonts/Prompt-Medium.ttf);
+}
+@font-face {
+  font-family: Exo;
+  src: url(./Fonts/Exo-Black.ttf);
+}
+h1 {
+  font-family: "Exo" !important;
+}
+h2 {
+  font-family: "Prompt" !important;
+}
+p {
+  font-family: "Didact" !important;
+}
 
 @media (min-width: 575.98px) {
   section {
@@ -27,49 +48,59 @@ section {
     padding: 0 calc(50% - 590px);
   }
 }
-@font-face {
-  font-family: SuperLine;
-  src: url(./Fonts/superline.ttf);
-}
-@font-face {
-  font-family: Circular;
-  src: url(./Fonts/circular-std-4.ttf);
-}
+
 .app {
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
+  padding-top: 10%;
+  transform: scale(1.2);
+  transition: all 1.5s;
+  word-break: normal;
 }
-.app h1 {
-    font-family: SuperLine;
-    font-size: 12em;
-    text-align: center;
-    transition: 1s all;
-    width: 80%;
-    margin: 0 auto;
-    cursor: pointer;
+.app.active {
+  width: 100%;
+  padding-top: 0;
+  transform: scale(1);
 }
+
 h1:hover {
   color: white;
   transition: 1s all;
-  
 }
-h1 {
-  border-top: 5px solid #e0dbde;
-  border-bottom: 5px solid #e0dbde;
-  font-size: 70px;
+.app h1 {
+  cursor: pointer;
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 5px;
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 8px;
+  width: 100%;
+  margin-top: 0.3em;
+  float: left;
+  font-size: 8em;
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0);
+  transition: 1s all;
+  line-height: 1.3em;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+  background: url(../public/Glitch.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  animation: move-background 3s infinite linear alternate; 
+  -webkit-animation: move-background 3s infinite linear alternate;
+  -moz-animation: move-background 3s infinite linear alternate;
+   -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
 }
 @-webkit-keyframes move-background {
   0% {
-    background-position: -300px 0;
+    background-size: 100%;
   }
   100% {
-    background-position: 300px -300px;
+    background-size: 100%;
   }
 }
 @-moz-keyframes move-background {
@@ -82,52 +113,110 @@ h1 {
 }
 @keyframes move-background {
   0% {
-    background-position: -300px 0;
+    background-size: 100%;
   }
   100% {
-    background-position: 300px -300px;
+    background-size: 200%;
   }
 }
-h1 {
-  -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
-  animation-play-state: running;
-  color: transparent;
-  background: url(../public/Glitch.jpg) no-repeat;
-  background-size: cover;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation: move-background 5s infinite linear alternate;
-  -moz-animation: move-background 5s infinite linear alternate;
-  animation: move-background 5s infinite linear alternate;
-}
+
 .app__content {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: center;
 }
-.app__content p {
-  font-family: "Circular";
+.app__content h2,
+.app > h2 {
   font-size: 4em;
   margin-right: 24px;
   /* letter-spacing: 0.1em; */
   transition: 0.5s all;
   color: #551a8b;
+  text-align: center;
 }
-.app__content p:hover {
+.app > p {
+  margin-top: 2em;
+  font-size: 2em;
+}
+.app__content h2:hover {
   color: white;
   text-shadow: 0 0 10px #551a8b, 0 0 20px #551a8b, 0 0 30px #551a8b,
     0 0 40px #551a8b;
+    cursor: pointer;
 }
 .changeTheme {
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute;
-    top: 2%;
-    left: 1%;
-    padding: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  padding: 24px;
+}
+
+.enter {
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.5s, visibility 0s !important;
+  padding-top: 0;
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 22em;
+  }
+}
+
+.hint {
+  margin-top: 0 !important;
+  font-size: 1em !important;
+  width: 100%;
+  color: #797777 !important;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.5s, visibility 0s !important;
+  padding-top: 0;
+  text-align: center;
+}
+.enter__active {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1.5s !important;
+}
+.enter.enter__error {
+  animation: 0.1s error infinite !important;
+}
+@keyframes error {
+  0% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+
+/* Fade */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,48 +1,108 @@
 import { observer } from "mobx-react-lite";
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { store } from "./stores/store";
-import "./App.css"
+import "./App.css";
 import { Skill } from "./Pages/Skill/Skill";
 import { Contacts } from "./Pages/Contacts/Contacts";
 import { Portfolio } from "./Pages/Portfolio/Portfolio";
 
-
 const App = observer(() => {
   const bgc = {
     background: store.theme ? "#fff" : "#000",
-    transition: "1s all"
+    transition: "1s all",
+  };
+  const changeH1 = (e: any) => {
+    store.theme
+      ? (e.target.style.textShadow =
+          "0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061")
+      : (e.target.style.textShadow =
+          "0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34");
+  };
+  const changeBackh1 = (e: any) => {
+    store.theme
+      ? (e.target.style.textShadow = "")
+      : (e.target.style.textShadow = "");
+  };
+  const [skill, setSkill]: any = useState();
+  const [portfolio, setPortfolio]: any = useState();
+  const [contacts, setContacts]: any = useState();
+  const [lock, setLock]:any = useState(true)
+
+  function Enter(e: any) {
+    if (e.code == "Space") {
+      document.querySelector(".enter")?.classList.add("enter__active");
+      document.querySelector(".hint")?.classList.add("enter__active");
+      document.querySelector(".app")?.classList.add("active");
+      setTimeout(() => {
+        document.querySelector(".enter")?.remove();
+        document.querySelector(".hint")?.remove();
+        setSkill(true)
+        setPortfolio(false)
+        setContacts(false)
+        setLock(false)
+      }, 1500);
+    } else {
+      document.querySelector(".enter")?.classList.add("enter__error");
+      setTimeout(() => {
+        document.querySelector(".enter")?.classList.remove("enter__error");
+        
+      }, 500);
+    }
   }
-  const changeH1 = (e:any) => {
-    store.theme ?
-    e.target.style.textShadow="0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061" :
-    e.target.style.textShadow="0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34" 
-  }
-  const changeBackh1 = (e:any) => {
-    store.theme ?
-    e.target.style.textShadow="" :
-    e.target.style.textShadow="" 
-  }
-  const [skill, setSkill]:any = useState()
-  const [portfolio, setPortfolio]:any = useState()
-  const [contacts, setContacts]:any = useState()
- 
+
+  useEffect(() => {
+    document.addEventListener("keypress", (e: any) => Enter(e));
+  }, []);
+
   return (
     <>
-     <section style={bgc}>
-       <div className="app">
-         <h1 onMouseOver={(e:any) => changeH1(e)} onMouseOut={(e:any) => changeBackh1(e)} onClick={() =>store.changeTheme()}>Apollinem's Studio</h1>
-         <div className="app__content">
-           <p  onClick={() => {setSkill(!skill); setPortfolio(false); setContacts(false)}}>Skills</p>
-           <p  onClick={() => {setPortfolio(!portfolio); setSkill(false); setContacts(false)}}>Portfolio</p>
-           <p  onClick={() => {setContacts(!contacts); setPortfolio(false); setSkill(false);}}>Contacts</p>
-         </div>
-       </div>
-       {skill ? <Skill />  : null }
-       {portfolio ? <Portfolio />   : null }
-       {contacts ? <Contacts />  : null }
-       
-
-     </section>
+      <section style={bgc}>
+        <div className="app">
+          <h1
+            onMouseOver={(e: any) => changeH1(e)}
+            onMouseOut={(e: any) => changeBackh1(e)}
+            onClick={() => store.changeTheme()}
+          >
+            Apollinem's Studio
+          </h1>
+          <div className="app__content">
+            <h2
+              onClick={() => {
+                setSkill(!skill);
+                setPortfolio(false);
+                setContacts(false);
+              }}
+            >
+              Skills
+            </h2>
+            <h2
+              onClick={() => {
+                setPortfolio(!portfolio);
+                setSkill(false);
+                setContacts(false);
+              }}
+            >
+              Portfolio
+            </h2>
+            <h2
+              onClick={() => {
+                setContacts(!contacts);
+                setPortfolio(false);
+                setSkill(false);
+              }}
+            >
+              Contacts
+            </h2>
+          </div>
+          <p className="enter">Press Space to start</p>
+          <p className="hint">
+            if you want to change the theme of the site, then click on the title
+          </p>
+        </div>
+        {skill && !lock ? <Skill /> : null}
+        {portfolio && !lock ? <Portfolio /> : null}
+        {contacts && !lock ? <Contacts /> : null}
+      </section>
     </>
   );
 });

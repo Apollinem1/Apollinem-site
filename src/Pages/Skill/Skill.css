@@ -1,19 +1,70 @@
 .skill {
-    max-width: 1440px;
-    margin: 32px auto;
-   animation: fade 2s;
+  max-width: 1440px;
+  margin: 32px auto;
+  position: relative;
+  animation: fade 2s;
+  display: flex;
+  z-index: 2;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  /* opacity: 1; */
 }
-.skill p {
-    font-size: 2.5em;
-    font-family: "Circular";
-    color: #551a8b;
-    /* letter-spacing: 0.1em; */
+.card__info.night p {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  font-weight: normal;
 }
-@keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+.card__info.night h2 {
+  font-size: 3em;
+  color: white;
+  font-weight: bold;
+}
+.card__info.day p {
+  font-size: 2em;
+  color: black(255, 255, 255);
+  font-weight: normal;
+
+}
+.card__info.day h2 {
+  font-size: 3em;
+  color: black;
+  font-weight: bold;
+}
+
+.card__info p::first-letter, .card__info h2::first-letter {
+  color: #551a8b;
+}
+.card__info {
+  --border-width: 3px;
+  padding: 2em;
+  width: 360px;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  background: #222;
+  border-radius: 3px;
+  position: relative;
+  border-radius: var(--border-width);
+}
+.card__info::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg, #394eb7, #3e67e9, #b22fa3, #b22fa3, rgb(101, 4, 121));
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: 6px;
+  animation: moveGradient 2s alternate infinite;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 100%;
   }
+}
+
+

@@ -3,11 +3,12 @@ import { observer } from "mobx-react-lite";
 import { observable } from "mobx";
 
 export const store = observable({
-   theme: true,
+   theme: false,
 
    changeTheme() {
        this.theme= !this.theme
        console.log(this.theme)
-   }
+   },
+
     
 })

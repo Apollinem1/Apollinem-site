@@ -7,7 +7,7 @@ export const Contacts = () => {
     <div className="contact">
       <ul className="glowingIcons">
         <li>
-          <a href="#" title="GitHub">
+          <a href="https://github.com/Apollinem1" title="GitHub">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="3em"
@@ -20,7 +20,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li>
-          <a href="#" title="Telegram">
+          <a href="https://t.me/Apollinem" title="Telegram">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="3em"
@@ -33,7 +33,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li>
-          <a href="#" title="Gmail">
+          <a href="mailto:rossamahinnikita@gmail.com" title="Gmail">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="3em"

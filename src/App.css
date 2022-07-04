@@ -25,7 +25,6 @@ p {
   font-family: "Didact" !important;
 }
 
-
 .app {
   width: 50%;
   margin: 0 auto;
@@ -199,7 +198,6 @@ h1:hover {
   }
 }
 
-
 @media (max-width: 1199.98px) {
   section {
     padding: 0 calc(50% - 590px);
@@ -232,6 +230,9 @@ h1:hover {
   h1 {
     font-size: 7em !important;
   }
+  h1:hover {
+    color: unset !important;
+  }
   h2 {
     font-size: 2.5em !important;
   }
@@ -245,7 +246,6 @@ h1:hover {
     min-width: 250px !important;
     max-width: 250px !important;
   }
-
 }
 
 @media (max-width: 767.98px) {
@@ -264,7 +264,12 @@ h1:hover {
   .app__content {
     flex-direction: column;
   }
-  .enter, .hint {
+
+  .app__content h2 {
+    margin-bottom: 1em;
+  }
+  .enter,
+  .hint {
     display: none;
   }
   .card__info {
@@ -305,4 +310,8 @@ h1:hover {
     width: 2em !important;
     height: 2em !important;
   }
+}
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }

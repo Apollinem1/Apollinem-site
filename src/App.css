@@ -311,7 +311,7 @@ h1:hover {
     height: 2em !important;
   }
 }
-a {
+* {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }

@@ -4,7 +4,7 @@ import "./Skill.css";
 import { store } from "../../stores/store";
 export const Skill = () => {
   const bgc = {
-    // background: store.theme ? "#fff" : "#000",
+    background: store.theme ? "#fff" : "#000",
    
   };
   useEffect(() => {

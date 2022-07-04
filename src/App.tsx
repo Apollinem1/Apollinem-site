@@ -12,22 +12,30 @@ const App = observer(() => {
     transition: "1s all",
   };
   const changeH1 = (e: any) => {
-    store.theme
-      ? (e.target.style.textShadow =
-          "0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061")
-      : (e.target.style.textShadow =
-          "0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34");
+    if (device == false) {
+      store.theme
+        ? (e.target.style.textShadow =
+            "0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061, 0 0 0px #00000061")
+        : (e.target.style.textShadow =
+            "0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34, 0 0 0px #ffffff34");
+    }
   };
   const changeBackh1 = (e: any) => {
-    store.theme
-      ? (e.target.style.textShadow = "")
-      : (e.target.style.textShadow = "");
+    if (device == false) {
+      store.theme
+        ? (e.target.style.textShadow = "")
+        : (e.target.style.textShadow = "");
+    }
   };
   const [skill, setSkill]: any = useState();
   const [portfolio, setPortfolio]: any = useState();
   const [contacts, setContacts]: any = useState();
   const [lock, setLock]: any = useState(true);
   const [load, setLoad]: any = useState(false);
+  let device =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+      navigator.userAgent
+    );
   const LoadPage = () => {};
 
   function Enter(e: any) {
@@ -54,16 +62,10 @@ const App = observer(() => {
   useEffect(() => {
     document.addEventListener("keypress", (e: any) => Enter(e));
 
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-        navigator.userAgent
-      ) &&
-      load == false
-    ) {
-      console.log("Вы используете мобильное устройство (телефон или планшет).")
+    if (device && load == false) {
       document.querySelector(".enter")?.remove();
       document.querySelector(".hint")?.remove();
-    
+
       document.querySelector(".app")?.classList.add("active");
       setTimeout(() => {
         setSkill(true);
@@ -71,6 +73,7 @@ const App = observer(() => {
         setContacts(false);
         setLock(false);
       }, 1500);
+    } else {
     }
     setLoad(true);
   }, []);
@@ -124,7 +127,6 @@ const App = observer(() => {
         {portfolio && !lock ? <Portfolio /> : null}
         {contacts && !lock ? <Contacts /> : null}
       </section>
-     
     </>
   );
 });

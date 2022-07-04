@@ -4,8 +4,8 @@ import "./Skill.css";
 import { store } from "../../stores/store";
 export const Skill = () => {
   const bgc = {
-    background: store.theme ? "#fff" : "#000",
-    transition: "1s all",
+    // background: store.theme ? "#fff" : "#000",
+   
   };
   useEffect(() => {
     if (store.theme === true) {
@@ -26,7 +26,7 @@ export const Skill = () => {
     <>
       <div className="skill">
         <div className="card__info" style={bgc}>
-          <h2>HTML&CSS</h2>
+          <h2>HTML<span style={{fontSize:"0.75em"}}>&</span>CSS</h2>
           <p>Experience: 2,5 years</p>
           <p>Flex</p>
           <p>Grid</p>
@@ -50,10 +50,10 @@ export const Skill = () => {
         <div className="card__info" style={bgc}>
           <h2>Other</h2>
           <p>English: A2</p>
-          <p>I've small expirience in: </p>
-          <p>Unity, UE4, Blender</p>
+          <p>I've small experience in: </p>
+          <p>Unity, UE4, Blender;</p>
           <p>WOW player with 8 years experience </p>
-          <p>Hobbies: music and my dog</p>
+          <p>Hobbies: -</p>
           
         </div>
       </div>

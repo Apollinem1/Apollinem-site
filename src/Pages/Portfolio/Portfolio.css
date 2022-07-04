@@ -5,9 +5,8 @@
   display: flex;
   flex-direction: row;
 }
-.portfolio p {
-  font-size: 2.5em;
-  font-family: "Circular";
+.portfolio h2 {
+
   color: #551a8b;
   /* letter-spacing: 0.1em; */
 }

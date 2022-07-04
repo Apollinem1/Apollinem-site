@@ -12,13 +12,13 @@ export const Portfolio = () => {
     <>
       <div className="portfolio">
         <div>
-          <p>
+          <h2>
             Rework and fix bugs -
             <br />
             <a href="https://studyintomsk.ru/" target={"_blanc"}>
               studyintomsk.ru
             </a>
-          </p>
+          </h2>
           <a href="https://studyintomsk.ru/" target={"_blanc"}>
           <LazyLoadImage
               alt={"123"}
@@ -28,13 +28,13 @@ export const Portfolio = () => {
           </a>
         </div>
         <div>
-          <p>
+          <h2>
             Create website -
             <br />
             <a href="https://welcome.tusur.ru/" target={"_blanc"}>
               welcome.tusur.ru
             </a>
-          </p>
+          </h2>
           <a href="https://welcome.tusur.ru/" target={"_blanc"}>
             <LazyLoadImage
               alt={"123"}
@@ -44,13 +44,13 @@ export const Portfolio = () => {
           </a>
         </div>
         <div>
-          <p>
+          <h2>
             Check my rep -
             <br />
             <a href="https://github.com/Apollinem1" target={"_blanc"}>
               My page github
             </a>
-          </p>
+          </h2>
           <a href="https://github.com/Apollinem1">
           <LazyLoadImage
               alt={"123"}

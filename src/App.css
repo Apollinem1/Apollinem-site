@@ -5,15 +5,15 @@ section {
 }
 @font-face {
   font-family: Didact;
-  src: url(./Fonts/DidactGothic-Regular.ttf);
+  src: url(./Fonts/TenorSans-Regular.ttf);
 }
 @font-face {
   font-family: Prompt;
-  src: url(./Fonts/Prompt-Medium.ttf);
+  src: url(./Fonts/Martel-Regular.ttf);
 }
 @font-face {
   font-family: Exo;
-  src: url(./Fonts/Exo-Black.ttf);
+  src: url(./Fonts/SquadaOne-Regular.ttf);
 }
 h1 {
   font-family: "Exo" !important;
@@ -25,29 +25,6 @@ p {
   font-family: "Didact" !important;
 }
 
-@media (min-width: 575.98px) {
-  section {
-    padding: 0 calc(50% - 270px);
-  }
-}
-
-@media (min-width: 767.98px) {
-  section {
-    padding: 0 calc(50% - 360px);
-  }
-}
-
-@media (min-width: 991.98px) {
-  section {
-    padding: 0 calc(50% - 480px);
-  }
-}
-
-@media (min-width: 1199.98px) {
-  section {
-    padding: 0 calc(50% - 590px);
-  }
-}
 
 .app {
   width: 50%;
@@ -72,9 +49,9 @@ h1:hover {
   text-align: center;
   text-transform: uppercase;
   width: 100%;
-  margin-top: 0.3em;
+  /* margin-top: 0.3em; */
   float: left;
-  font-size: 8em;
+  font-size: 9em;
   display: flex;
   justify-content: center;
   color: rgba(255, 0, 0, 0);
@@ -87,10 +64,10 @@ h1:hover {
   background-size: cover;
   background-position: center;
   background-clip: text;
-  animation: move-background 3s infinite linear alternate; 
+  animation: move-background 3s infinite linear alternate;
   -webkit-animation: move-background 3s infinite linear alternate;
   -moz-animation: move-background 3s infinite linear alternate;
-   -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -128,11 +105,13 @@ h1:hover {
 }
 .app__content h2,
 .app > h2 {
-  font-size: 4em;
+  font-size: 3em;
+  letter-spacing: 0.1em;
   margin-right: 24px;
+  text-transform: uppercase;
   /* letter-spacing: 0.1em; */
   transition: 0.5s all;
-  color: #551a8b;
+  color: #7322be;
   text-align: center;
 }
 .app > p {
@@ -143,7 +122,7 @@ h1:hover {
   color: white;
   text-shadow: 0 0 10px #551a8b, 0 0 20px #551a8b, 0 0 30px #551a8b,
     0 0 40px #551a8b;
-    cursor: pointer;
+  cursor: pointer;
 }
 .changeTheme {
   border-radius: 50%;
@@ -210,7 +189,6 @@ h1:hover {
   }
 }
 
-
 /* Fade */
 @keyframes fade {
   0% {
@@ -218,5 +196,113 @@ h1:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+
+@media (max-width: 1199.98px) {
+  section {
+    padding: 0 calc(50% - 590px);
+  }
+  h1 {
+    font-size: 8em !important;
+  }
+  h2 {
+    font-size: 3em !important;
+  }
+  * p {
+    font-size: 1.7em !important;
+  }
+  .card__info {
+    min-width: 300px !important;
+    margin-bottom: 1em;
+  }
+  .portfolio {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .portfolio > div {
+    max-width: 80% !important;
+  }
+}
+@media (max-width: 991.98px) {
+  section {
+    padding: 0 calc(50% - 480px);
+  }
+  h1 {
+    font-size: 7em !important;
+  }
+  h2 {
+    font-size: 2.5em !important;
+  }
+  p {
+    font-size: 1.5em !important;
+  }
+  .skill {
+    flex-wrap: wrap;
+  }
+  .card__info {
+    min-width: 250px !important;
+    max-width: 250px !important;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  section {
+    padding: 0 calc(50% - 360px);
+  }
+  h1 {
+    font-size: 6em !important;
+  }
+  h2 {
+    font-size: 2em !important;
+  }
+  p {
+    font-size: 1.2em !important;
+  }
+  .app__content {
+    flex-direction: column;
+  }
+  .enter, .hint {
+    display: none;
+  }
+  .card__info {
+    min-width: 250px !important;
+    max-width: 250px !important;
+  }
+}
+@media (max-width: 575.98px) {
+  section {
+    padding: 0 calc(50% - 270px);
+  }
+  h1 {
+    font-size: 5em !important;
+  }
+  h2 {
+    font-size: 1.5em !important;
+  }
+  p {
+    font-size: 1em !important;
+  }
+  ul.glowingIcons {
+    position: unset !important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-content: center;
+    width: 100%;
+    transform: none !important;
+  }
+  .glowingIcons li {
+    margin-top: 1em !important;
+  }
+  .glowingIcons li a {
+    width: 3em !important;
+    height: 3em !important;
+  }
+  .glowingIcons svg {
+    width: 2em !important;
+    height: 2em !important;
   }
 }

@@ -24,21 +24,26 @@
   font-size: 2em;
   color: black(255, 255, 255);
   font-weight: normal;
-
 }
 .card__info.day h2 {
   font-size: 3em;
   color: black;
   font-weight: bold;
 }
-
-.card__info p::first-letter, .card__info h2::first-letter {
-  color: #551a8b;
+.card__info h2 {
+  margin-bottom: 0.75em;
 }
+
+/* .card__info p::first-letter, .card__info h2::first-letter {
+  color: #551a8b;
+} */
 .card__info {
+  transition: 1s all;
+
   --border-width: 3px;
   padding: 2em;
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   line-height: 2.5em;
   letter-spacing: 0.1em;
   background: #222;
@@ -54,11 +59,19 @@
   z-index: -1;
   width: calc(100% + var(--border-width) * 2);
   height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(60deg, #394eb7, #3e67e9, #b22fa3, #b22fa3, rgb(101, 4, 121));
+  background: linear-gradient(
+    60deg,
+    #ffffff,
+    #394eb7,
+    #3e67e9,
+    #b22fa3,
+    #b22fa3,
+    rgb(101, 4, 121)
+  );
   background-size: 300% 300%;
   background-position: 0 50%;
   border-radius: 6px;
-  animation: moveGradient 2s alternate infinite;
+  animation: moveGradient 4s alternate infinite;
 }
 
 @keyframes moveGradient {
@@ -66,5 +79,4 @@
     background-position: 100% 100%;
   }
 }
-
 

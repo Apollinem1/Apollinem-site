@@ -67,3 +67,12 @@ ul.glowingIcons li a:hover i {
   color: #fff;
   text-shadow: 0 0 5px #ffffff;
 }
+ul.glowingIcons li a:active::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffffff;
+}
+
+ul.glowingIcons li a:active i {
+  color: #fff;
+  text-shadow: 0 0 5px #ffffff;
+}

@@ -1,6 +1,6 @@
 .skill {
   max-width: 1440px;
-  margin: 32px auto;
+  margin: 32px auto 0;
   position: relative;
   animation: fade 2s;
   display: flex;

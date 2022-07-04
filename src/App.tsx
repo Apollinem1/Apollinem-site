@@ -26,7 +26,9 @@ const App = observer(() => {
   const [skill, setSkill]: any = useState();
   const [portfolio, setPortfolio]: any = useState();
   const [contacts, setContacts]: any = useState();
-  const [lock, setLock]:any = useState(true)
+  const [lock, setLock]: any = useState(true);
+  const [load, setLoad]: any = useState(false);
+  const LoadPage = () => {};
 
   function Enter(e: any) {
     if (e.code == "Space") {
@@ -36,22 +38,41 @@ const App = observer(() => {
       setTimeout(() => {
         document.querySelector(".enter")?.remove();
         document.querySelector(".hint")?.remove();
-        setSkill(true)
-        setPortfolio(false)
-        setContacts(false)
-        setLock(false)
+        setSkill(true);
+        setPortfolio(false);
+        setContacts(false);
+        setLock(false);
       }, 1500);
     } else {
       document.querySelector(".enter")?.classList.add("enter__error");
       setTimeout(() => {
         document.querySelector(".enter")?.classList.remove("enter__error");
-        
       }, 500);
     }
   }
 
   useEffect(() => {
     document.addEventListener("keypress", (e: any) => Enter(e));
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+        navigator.userAgent
+      ) &&
+      load == false
+    ) {
+      console.log("Вы используете мобильное устройство (телефон или планшет).")
+      document.querySelector(".enter")?.remove();
+      document.querySelector(".hint")?.remove();
+    
+      document.querySelector(".app")?.classList.add("active");
+      setTimeout(() => {
+        setSkill(true);
+        setPortfolio(false);
+        setContacts(false);
+        setLock(false);
+      }, 1500);
+    }
+    setLoad(true);
   }, []);
 
   return (
@@ -103,6 +124,7 @@ const App = observer(() => {
         {portfolio && !lock ? <Portfolio /> : null}
         {contacts && !lock ? <Contacts /> : null}
       </section>
+     
     </>
   );
 });

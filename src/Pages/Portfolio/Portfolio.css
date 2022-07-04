@@ -6,6 +6,7 @@
   flex-direction: row;
 }
 .portfolio h2 {
+  font-size: 2em;
 
   color: #551a8b;
   /* letter-spacing: 0.1em; */

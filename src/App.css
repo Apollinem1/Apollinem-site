@@ -2,6 +2,7 @@ section {
   padding: 32px 15px;
   background-color: #000;
   min-height: 100vh;
+  max-width: 100%;
 }
 @font-face {
   font-family: Didact;
@@ -35,19 +36,23 @@ p {
 }
 .app.active {
   width: 100%;
+  max-width: 100%;
+
   padding-top: 0;
   transform: scale(1);
 }
 
 h1:hover {
   color: white;
-  transition: 1s all;
+  transition: 0.5s all;
 }
 .app h1 {
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+  max-width: 100%;
+
   /* margin-top: 0.3em; */
   float: left;
   font-size: 9em;
@@ -100,6 +105,8 @@ h1:hover {
   display: flex;
   flex-direction: row;
   width: 100%;
+  max-width: 100%;
+
   justify-content: center;
 }
 .app__content h2,
@@ -268,6 +275,7 @@ h1:hover {
 
   .app__content h2 {
     margin-bottom: 1em;
+    margin-right: 0 !important;
   }
   .enter,
   .hint {

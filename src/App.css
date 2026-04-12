@@ -376,9 +376,9 @@ html[data-theme="light"] .nav-link--active {
   * p {
     font-size: 1.7em !important;
   }
-  .card__info {
-    min-width: 300px !important;
-    margin-bottom: 1em;
+  .skill-card {
+    min-width: 0 !important;
+    margin-bottom: 0;
   }
   .portfolio {
     flex-wrap: wrap;
@@ -408,9 +408,9 @@ html[data-theme="light"] .nav-link--active {
   .skill {
     flex-wrap: wrap;
   }
-  .card__info {
-    min-width: 250px !important;
-    max-width: 250px !important;
+  .skill-card {
+    min-width: 0 !important;
+    max-width: none !important;
   }
 }
 
@@ -439,9 +439,9 @@ html[data-theme="light"] .nav-link--active {
   .hint {
     display: none;
   }
-  .card__info {
-    min-width: 250px !important;
-    max-width: 250px !important;
+  .skill-card {
+    min-width: 0 !important;
+    max-width: none !important;
   }
 }
 @media (max-width: 575.98px) {

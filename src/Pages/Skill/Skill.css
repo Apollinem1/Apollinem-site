@@ -5,29 +5,31 @@
   animation: fade 2s;
   display: flex;
   z-index: 2;
+  gap: 1.25rem;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
   /* opacity: 1; */
 }
-.card__info.night p {
+.card__info--dark p {
   font-size: 2em;
   color: rgb(255, 255, 255);
   font-weight: normal;
 }
-.card__info.night h2 {
+.card__info--dark h2 {
   font-size: 3em;
   color: white;
   font-weight: bold;
 }
-.card__info.day p {
+.card__info--light p {
   font-size: 2em;
-  color: black(255, 255, 255);
+  color: #1a1a1a;
   font-weight: normal;
 }
-.card__info.day h2 {
+.card__info--light h2 {
   font-size: 3em;
-  color: black;
+  color: #0d0d0d;
   font-weight: bold;
 }
 .card__info h2 {
@@ -38,7 +40,7 @@
   color: #551a8b;
 } */
 .card__info {
-  transition: 1s all;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, background 0.6s ease;
 
   --border-width: 3px;
   padding: 2em;
@@ -46,10 +48,24 @@
   width: 100%;
   line-height: 2.5em;
   letter-spacing: 0.1em;
-  background: #222;
+  background: rgba(24, 24, 28, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 3px;
   position: relative;
   border-radius: var(--border-width);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+}
+.card__info:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 64px rgba(85, 26, 139, 0.35);
+}
+.card__info--light {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 48px rgba(20, 20, 40, 0.12);
+}
+.card__info--light:hover {
+  box-shadow: 0 28px 64px rgba(85, 26, 139, 0.22);
 }
 .card__info::after {
   position: absolute;

@@ -1,8 +1,78 @@
-section {
+:root {
+  --page-bg: #050508;
+  --page-fg: #f4f0ff;
+  --nav-muted: #8b5cf0;
+  --accent: #7322be;
+  --title-glow: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="light"] {
+  --page-bg: #f4f1fb;
+  --page-fg: #140a1f;
+  --nav-muted: #5b21b6;
+  --title-glow: rgba(0, 0, 0, 0.04);
+}
+
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
   padding: 32px 15px;
-  background-color: #000;
+  background-color: var(--page-bg);
+  color: var(--page-fg);
   min-height: 100vh;
   max-width: 100%;
+  transition: background-color 0.8s ease, color 0.6s ease;
+}
+
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      ellipse 90% 55% at 15% -5%,
+      rgba(115, 34, 190, 0.42),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 70% 45% at 92% 8%,
+      rgba(62, 103, 233, 0.32),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 48% 105%,
+      rgba(178, 47, 163, 0.28),
+      transparent 55%
+    );
+  animation: ambient-drift 22s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-drift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: scale(1.06) translate3d(-1.5%, 1.2%, 0);
+    filter: hue-rotate(14deg);
+  }
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-bg {
+    animation: none;
+  }
 }
 @font-face {
   font-family: Didact;
@@ -27,6 +97,8 @@ p {
 }
 
 .app {
+  position: relative;
+  z-index: 2;
   width: 50%;
   margin: 0 auto;
   padding-top: 10%;
@@ -108,6 +180,8 @@ h1:hover {
   max-width: 100%;
 
   justify-content: center;
+  gap: 8px 20px;
+  flex-wrap: wrap;
 }
 .app__content h2,
 .app > h2 {
@@ -117,17 +191,64 @@ h1:hover {
   text-transform: uppercase;
   /* letter-spacing: 0.1em; */
   transition: 0.5s all;
-  color: #7322be;
+  color: var(--nav-muted);
   text-align: center;
+}
+
+.nav-link {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 0.08em 0.28em 0.12em;
+  border-radius: 0.12em;
+  transition: color 0.35s ease, transform 0.3s ease, text-shadow 0.35s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  right: 0.2em;
+  bottom: 0.02em;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #394eb7, #b22fa3, #7322be);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.95;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  color: #c4b5fd;
+  text-shadow: 0 0 18px rgba(115, 34, 190, 0.55);
+}
+
+html[data-theme="light"] .nav-link:hover {
+  color: #4c1d95;
+  text-shadow: none;
+}
+
+.nav-link--active {
+  color: #ede9fe;
+  text-shadow: 0 0 22px rgba(115, 34, 190, 0.85),
+    0 0 42px rgba(178, 47, 163, 0.45);
+}
+
+html[data-theme="light"] .nav-link--active {
+  color: #3b0764;
+  text-shadow: none;
+}
+
+.nav-link--active::after {
+  transform: scaleX(1);
 }
 .app > p {
   margin-top: 2em;
   font-size: 2em;
 }
-.app__content h2:hover {
-  color: white;
-  text-shadow: 0 0 10px #551a8b, 0 0 20px #551a8b, 0 0 30px #551a8b,
-    0 0 40px #551a8b;
+.app__content h2.nav-link:hover {
   cursor: pointer;
 }
 .changeTheme {
@@ -206,7 +327,7 @@ h1:hover {
 }
 
 @media (max-width: 1199.98px) {
-  section {
+  .page {
     padding: 0 calc(50% - 590px);
   }
   h1 {
@@ -226,13 +347,13 @@ h1:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .portfolio > div {
+  .portfolio__card {
     max-width: 80% !important;
-    margin-right: 0 !important;
+    flex-basis: 80%;
   }
 }
 @media (max-width: 991.98px) {
-  section {
+  .page {
     padding: 0 calc(50% - 480px);
   }
   h1 {
@@ -257,7 +378,7 @@ h1:hover {
 }
 
 @media (max-width: 767.98px) {
-  section {
+  .page {
     padding: 0 calc(50% - 360px);
   }
   h1 {
@@ -287,7 +408,7 @@ h1:hover {
   }
 }
 @media (max-width: 575.98px) {
-  section {
+  .page {
     padding: 0 calc(50% - 270px);
   }
   h1 {

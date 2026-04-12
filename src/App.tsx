@@ -7,10 +7,11 @@ import { Contacts } from "./Pages/Contacts/Contacts";
 import { Portfolio } from "./Pages/Portfolio/Portfolio";
 
 const App = observer(() => {
-  const bgc = {
-    background: store.theme ? "#fff" : "#000",
-    transition: "1s all",
-  };
+  const theme = store.theme ? "light" : "dark";
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
   const changeH1 = (e: any) => {
     if (device == false) {
       store.theme
@@ -80,7 +81,9 @@ const App = observer(() => {
 
   return (
     <>
-      <section style={bgc}>
+      <section className="page" data-theme={theme} aria-label="Main content">
+        <div className="ambient-bg" aria-hidden="true" />
+        <div className="grain" aria-hidden="true" />
         <div className="app">
           <h1
             onMouseOver={(e: any) => changeH1(e)}
@@ -91,6 +94,9 @@ const App = observer(() => {
           </h1>
           <div className="app__content">
             <h2
+              className={
+                skill && !lock ? "nav-link nav-link--active" : "nav-link"
+              }
               onClick={() => {
                 setSkill(!skill);
                 setPortfolio(false);
@@ -100,6 +106,11 @@ const App = observer(() => {
               Skills
             </h2>
             <h2
+              className={
+                portfolio && !lock
+                  ? "nav-link nav-link--active"
+                  : "nav-link"
+              }
               onClick={() => {
                 setPortfolio(!portfolio);
                 setSkill(false);
@@ -109,6 +120,9 @@ const App = observer(() => {
               Portfolio
             </h2>
             <h2
+              className={
+                contacts && !lock ? "nav-link nav-link--active" : "nav-link"
+              }
               onClick={() => {
                 setContacts(!contacts);
                 setPortfolio(false);

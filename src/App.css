@@ -1,3 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 :root {
   --page-bg: #050508;
   --page-fg: #f4f0ff;
@@ -17,10 +32,12 @@ html[data-theme="light"] {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-  padding: 32px 15px;
+  padding: 24px 15px 28px;
   background-color: var(--page-bg);
   color: var(--page-fg);
+  /* 100vh + padding без лишней высоты; dvh — корректнее на мобильных */
   min-height: 100vh;
+  min-height: 100dvh;
   max-width: 100%;
   transition: background-color 0.8s ease, color 0.6s ease;
 }
@@ -74,6 +91,21 @@ html[data-theme="light"] {
     animation: none;
   }
 }
+
+/* Низкий экран: уменьшаем заголовок, чтобы hero + меню влезали без лишнего скролла */
+@media (max-height: 720px) {
+  .app h1 {
+    font-size: clamp(2.25rem, 12vh, 5rem) !important;
+    line-height: 1.15 !important;
+  }
+  .app {
+    padding-top: clamp(0.5rem, 3vh, 2rem);
+  }
+  .app__content h2,
+  .app > h2 {
+    font-size: clamp(1.25rem, 4vh, 2rem) !important;
+  }
+}
 @font-face {
   font-family: Didact;
   src: url(./Fonts/TenorSans-Regular.ttf);
@@ -101,8 +133,11 @@ p {
   z-index: 2;
   width: 50%;
   margin: 0 auto;
-  padding-top: 10%;
+  /* было 10% — в CSS это 10% от ширины контейнера, из-за чего на широких экранах
+     отступ сверху становился сотнями пикселей и ломал высоту экрана */
+  padding-top: clamp(1rem, 7vh, 5.5rem);
   transform: scale(1.2);
+  transform-origin: top center;
   transition: all 1.5s;
   word-break: normal;
 }
@@ -126,8 +161,10 @@ h1:hover {
   max-width: 100%;
 
   /* margin-top: 0.3em; */
-  float: left;
-  font-size: 9em;
+  /* float:left ломал высоту контейнера и давал лишний скролл */
+  float: none;
+  /* плавное уменьшение на низких/узких экранах, без гигантской высоты */
+  font-size: clamp(2.75rem, 11vw, 9em);
   display: flex;
   justify-content: center;
   color: rgba(255, 0, 0, 0);

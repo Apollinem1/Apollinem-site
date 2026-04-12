@@ -1,11 +1,11 @@
 .skill {
   max-width: 1440px;
-  margin: 32px auto 0;
+  margin: 24px auto 0;
   position: relative;
   animation: fade 2s;
   display: flex;
   z-index: 2;
-  gap: 1.25rem;
+  gap: 1rem;
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
@@ -43,7 +43,7 @@
   transition: transform 0.45s ease, box-shadow 0.45s ease, background 0.6s ease;
 
   --border-width: 3px;
-  padding: 2em;
+  padding: 1.5em 1.35em;
   max-width: 360px;
   width: 100%;
   line-height: 2.5em;

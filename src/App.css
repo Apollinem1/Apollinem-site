@@ -42,6 +42,92 @@ html[data-theme="light"] {
   transition: background-color 0.8s ease, color 0.6s ease;
 }
 
+/* Один экран: компактный хедер + граф Skills на оставшуюся высоту */
+.page--skills-view {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px 8px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.page--skills-view .app {
+  flex: 0 0 auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  margin: 0 auto;
+  transform: none !important;
+}
+
+.page--skills-view .app h1 {
+  font-size: clamp(1.35rem, 4.2vw, 2.75rem) !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.15em !important;
+}
+
+.page--skills-view .app__content {
+  gap: 4px 12px;
+  margin-top: 0.15rem;
+}
+
+.page--skills-view .app__content h2,
+.page--skills-view .app > h2 {
+  font-size: clamp(0.78rem, 1.9vw, 1.15rem) !important;
+  margin-right: 10px !important;
+  letter-spacing: 0.06em !important;
+}
+
+.page--skills-view .skill-obsidian {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.page--skills-view .skill-obsidian__canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.page--skills-view .obs-graph__svg {
+  max-height: min(58vh, 100%);
+  width: 100%;
+}
+
+@media (max-height: 520px) {
+  .page--skills-view {
+    max-height: none;
+    overflow-y: auto;
+  }
+}
+
+/* Медиазапросы ниже задают .page огромный горизонтальный padding — для Skills оставляем компактно */
+@media (max-width: 1199.98px) {
+  .page.page--skills-view {
+    padding: 6px 10px 8px !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .page.page--skills-view {
+    padding: 6px 10px 8px !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .page.page--skills-view {
+    padding: 6px 10px 8px !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .page.page--skills-view {
+    padding: 6px 8px 8px !important;
+  }
+}
+
 .ambient-bg {
   position: fixed;
   inset: 0;

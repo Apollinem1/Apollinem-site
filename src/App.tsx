@@ -81,7 +81,13 @@ const App = observer(() => {
 
   return (
     <>
-      <section className="page" data-theme={theme} aria-label="Main content">
+      <section
+        className={
+          skill && !lock ? "page page--skills-view" : "page"
+        }
+        data-theme={theme}
+        aria-label="Main content"
+      >
         <div className="ambient-bg" aria-hidden="true" />
         <div className="grain" aria-hidden="true" />
         <div className="app">

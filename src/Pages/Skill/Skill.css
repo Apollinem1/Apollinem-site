@@ -1,82 +1,162 @@
-.skill {
-  max-width: 1440px;
-  margin: 32px auto 0;
+/* Skills — граф в духе Obsidian (узлы + рёбра) */
+
+.skill-obsidian {
   position: relative;
-  animation: fade 2s;
-  display: flex;
   z-index: 2;
-  flex-direction: row;
   width: 100%;
-  justify-content: space-around;
-  /* opacity: 1; */
-}
-.card__info.night p {
-  font-size: 2em;
-  color: rgb(255, 255, 255);
-  font-weight: normal;
-}
-.card__info.night h2 {
-  font-size: 3em;
-  color: white;
-  font-weight: bold;
-}
-.card__info.day p {
-  font-size: 2em;
-  color: black(255, 255, 255);
-  font-weight: normal;
-}
-.card__info.day h2 {
-  font-size: 3em;
-  color: black;
-  font-weight: bold;
-}
-.card__info h2 {
-  margin-bottom: 0.75em;
+  max-width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 0 2px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  animation: fade 0.8s ease;
 }
 
-/* .card__info p::first-letter, .card__info h2::first-letter {
-  color: #551a8b;
-} */
-.card__info {
-  transition: 1s all;
+.skill-obsidian--dark {
+  --so-text: #f4f0ff;
+  --so-muted: rgba(228, 220, 255, 0.72);
+  --so-panel: rgba(14, 12, 22, 0.45);
+  --so-border: rgba(255, 255, 255, 0.08);
+}
 
-  --border-width: 3px;
-  padding: 2em;
-  max-width: 360px;
+.skill-obsidian--light {
+  --so-text: #140a1f;
+  --so-muted: rgba(50, 30, 80, 0.72);
+  --so-panel: rgba(255, 255, 255, 0.55);
+  --so-border: rgba(91, 33, 182, 0.12);
+}
+
+.skill-obsidian__head {
+  flex: 0 0 auto;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.skill-obsidian__tag {
+  display: inline-block;
+  font-family: ui-monospace, monospace !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.2em;
+  color: var(--so-muted) !important;
+  margin-bottom: 0.2rem;
+}
+
+.skill-obsidian__title {
+  font-family: "Prompt", Georgia, serif !important;
+  font-size: clamp(0.72rem, 1.35vw, 0.95rem) !important;
+  font-weight: 600 !important;
+  color: var(--so-muted) !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  max-width: 42ch;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.skill-obsidian__canvas {
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  line-height: 2.5em;
-  letter-spacing: 0.1em;
-  background: #222;
-  border-radius: 3px;
-  position: relative;
-  border-radius: var(--border-width);
-}
-.card__info::after {
-  position: absolute;
-  content: "";
-  top: calc(-1 * var(--border-width));
-  left: calc(-1 * var(--border-width));
-  z-index: -1;
-  width: calc(100% + var(--border-width) * 2);
-  height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(
-    60deg,
-    #ffffff,
-    #394eb7,
-    #3e67e9,
-    #b22fa3,
-    #b22fa3,
-    rgb(101, 4, 121)
-  );
-  background-size: 300% 300%;
-  background-position: 0 50%;
-  border-radius: 6px;
-  animation: moveGradient 4s alternate infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--so-panel);
+  border: 1px solid var(--so-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 4px;
+  box-sizing: border-box;
 }
 
-@keyframes moveGradient {
-  50% {
-    background-position: 100% 100%;
+.obs-graph__svg {
+  width: 100%;
+  height: auto;
+  max-height: min(42vh, 320px);
+  display: block;
+}
+
+.obs-graph__label {
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace !important;
+  font-size: 7px !important;
+  fill: var(--so-text);
+  pointer-events: none;
+  text-rendering: geometricPrecision;
+}
+
+.obs-graph__label--hub {
+  font-size: 8.5px !important;
+  fill: #faf5ff;
+}
+
+.skill-obsidian--light .obs-graph__label--hub {
+  fill: #faf5ff;
+}
+
+.obs-graph__node {
+  cursor: default;
+  transition: opacity 0.2s ease;
+}
+
+.skill-obsidian__legend {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.35rem;
+  font-family: "Didact", system-ui, sans-serif !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.06em;
+  color: var(--so-muted) !important;
+}
+
+.skill-obsidian__lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.skill-obsidian__lg i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.skill-obsidian__lg--tech i {
+  background: #8b5cf0;
+  box-shadow: 0 0 6px #8b5cf0;
+}
+
+.skill-obsidian__lg--soft i {
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+}
+
+.skill-obsidian__lg--hub i {
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+}
+
+@media (min-width: 768px) {
+  .obs-graph__label {
+    font-size: 8px !important;
+  }
+  .obs-graph__label--hub {
+    font-size: 10px !important;
+  }
+  .obs-graph__svg {
+    max-height: min(48vh, 380px);
   }
 }
 
+@media (max-height: 640px) {
+  .obs-graph__svg {
+    max-height: 36vh;
+  }
+  .skill-obsidian__head {
+    margin-bottom: 0.2rem;
+  }
+}
